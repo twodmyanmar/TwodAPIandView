@@ -94,3 +94,4 @@ php artisan serve
 
 - This project is owned by `hobocustomsoftware@gmail.com`.
 - Please ask for permission before copying, redistributing, or reusing this code.
+- Unauthorized copying or use without permission may result in legal action.

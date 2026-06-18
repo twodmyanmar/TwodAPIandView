@@ -14,10 +14,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        if (is_dir(base_path('vendor/filament/filament'))) {
-            $this->app->register(\App\Providers\Filament\AdminPanelProvider::class);
-        }
-
         $this->app->singleton(TwoDigitCrawlerService::class, function ($app) {
             return new TwoDigitCrawlerService();
         });

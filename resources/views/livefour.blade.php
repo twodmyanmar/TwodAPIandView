@@ -171,7 +171,7 @@
     mark.style.display = "block";
     clock.style.display = "block";
     const redirectToOptions = () => {
-        window.location.repalce('http://127.0.0.1:8000/options');
+        window.location.replace(@json(url('/option')));
     }
 
     const JumpNumber = () => {
@@ -309,4 +309,3 @@
 </script>
 
 </html>
-

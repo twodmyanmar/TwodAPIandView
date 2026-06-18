@@ -73,9 +73,9 @@
 
 
             <div class="flex justify-center align-items-center">
-                <a href="/live1"><img src="public/assets/image/2d.png" class="mr-3 h-7 w-7" /></a>
-                <a href="/live2"><img src="public/assets/image/3D.png" class="mr-3 h-7 w-7" /></a>
-                <a href="/calendar"><img src="public/assets/image/calendarweek1.png" class="h-8 mr-2 w-9" /></a>
+                <a href="/live1"><img src="{{ asset('assets/image/2d.png') }}" class="mr-3 h-7 w-7" /></a>
+                <a href="/live2"><img src="{{ asset('assets/image/3D.png') }}" class="mr-3 h-7 w-7" /></a>
+                <a href="/calendar"><img src="{{ asset('assets/image/calendarweek1.png') }}" class="h-8 mr-2 w-9" /></a>
                 <a href="/option">
                     
                     <svg fill="#000000" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-4" viewBox="0 0 52 52"
@@ -280,7 +280,7 @@
     mark.style.display = "block";
     clock.style.display = "block";
     const redirectToOptions = () => {
-        window.location.repalce('https://www.twodthailandmyanmar.com/options');
+        window.location.replace(@json(url('/option')));
     }
 
     const JumpNumber = () => {

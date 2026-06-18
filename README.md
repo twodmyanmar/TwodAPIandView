@@ -90,3 +90,7 @@ php artisan serve
 - `/calendar` - calendar view
 - `/option` - navigation page
 
+## Ownership
+
+- This project is owned by `hobocustomsoftware@gmail.com`.
+- Please ask for permission before copying, redistributing, or reusing this code.

@@ -4,9 +4,10 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\EventDaysResource\Pages;
 use App\Models\EventDays;
-use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\DatePicker;
+use Filament\Schemas\Components\TextInput;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 
@@ -22,15 +23,15 @@ class EventDaysResource extends Resource
 
     protected static ?string $pluralModelLabel = 'ပိတ်ရက်များ';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
-                Forms\Components\TextInput::make('title')
+                TextInput::make('title')
                     ->label('ခေါင်းစဉ်')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\DatePicker::make('event_date')
+                DatePicker::make('event_date')
                     ->label('ရက်စွဲ')
                     ->required()
                     ->native(false)

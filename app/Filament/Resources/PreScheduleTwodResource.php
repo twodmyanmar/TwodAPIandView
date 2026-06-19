@@ -4,9 +4,11 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PreScheduleTwodResource\Pages;
 use App\Models\PreScheduleTwod;
-use Filament\Forms;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\DatePicker;
+use Filament\Schemas\Components\Select;
+use Filament\Schemas\Components\TextInput;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 
@@ -34,31 +36,31 @@ class PreScheduleTwodResource extends Resource
         ];
     }
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
-                Forms\Components\DatePicker::make('schedule_date')
+                DatePicker::make('schedule_date')
                     ->label('ရက်စွဲ')
                     ->required()
                     ->native(false),
-                Forms\Components\Select::make('open_time')
-                    ->label('ဈေးဖွင့်ချိန်')
+                Select::make('open_time')
+                    ->label('အဖွင့်ချိန်')
                     ->options(self::openTimeOptions())
                     ->required(),
-                Forms\Components\TextInput::make('number')
+                TextInput::make('number')
                     ->label('2D')
                     ->required()
                     ->maxLength(4),
-                Forms\Components\TextInput::make('set')
+                TextInput::make('set')
                     ->label('SET')
                     ->default('--')
                     ->maxLength(50),
-                Forms\Components\TextInput::make('value')
+                TextInput::make('value')
                     ->label('Value')
                     ->default('--')
                     ->maxLength(50),
-                Forms\Components\TextInput::make('status')
+                TextInput::make('status')
                     ->label('status')
                     ->default('1')
                     ->maxLength(10),

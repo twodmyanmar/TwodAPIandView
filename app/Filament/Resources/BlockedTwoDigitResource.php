@@ -4,9 +4,10 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\BlockedTwoDigitResource\Pages;
 use App\Models\BlockedTwoDigit;
-use Filament\Forms;
-use Filament\Forms\Form;
+use Filament\Schemas\Components\Textarea;
+use Filament\Schemas\Components\TextInput;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
 
@@ -24,17 +25,17 @@ class BlockedTwoDigitResource extends Resource
 
     protected static ?string $navigationLabel = 'မရကဏန်းများ';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
             ->schema([
-                Forms\Components\TextInput::make('number')
+                TextInput::make('number')
                     ->label('2D (00–99)')
                     ->required()
                     ->maxLength(4)
                     ->dehydrateStateUsing(fn ($state) => BlockedTwoDigit::normalizeNumber((string) $state))
                     ->unique(table: BlockedTwoDigit::class, column: 'number', ignoreRecord: true),
-                Forms\Components\Textarea::make('note')
+                Textarea::make('note')
                     ->label('မှတ်ချက်')
                     ->maxLength(500)
                     ->columnSpanFull(),
